@@ -5,8 +5,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'models/task.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'screens/login_screen.dart';
+import 'auth_wrapper.dart';
+import 'services/auth_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+
   runApp(const TodoApp());
 }
 
@@ -23,7 +31,7 @@ class TodoApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      home: const HomeScreen(),
+      home: const AuthWrapper(),
     );
   }
 }
@@ -279,6 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: isDarkMode ? Colors.grey.shade900 : Colors.white,
       appBar: AppBar(
         backgroundColor: isDarkMode ? Colors.grey.shade900 : Colors.white,
@@ -313,6 +322,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Icon(
                 Icons.nightlight_round,
                 color: isDarkMode ? Colors.blue : Colors.grey,
+              ),
+              IconButton(
+                icon: const Icon(Icons.logout),
+                onPressed: () async {
+                  await AuthService().signOut();
+                },
               ),
 
               const SizedBox(width: 8),
