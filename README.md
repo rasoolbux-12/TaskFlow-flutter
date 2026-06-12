@@ -1,120 +1,141 @@
-# 🚀 TaskFlow - Flutter Todo App
+# 🚀 TaskFlow - Smart Task Management App
 
-TaskFlow is a modern and elegant task management application built with Flutter. It helps users organize daily activities, manage tasks efficiently, and stay productive with a clean and responsive user interface.
+TaskFlow is a modern task management application built with **Flutter** and **Firebase Authentication**. It helps users organize daily activities, manage tasks efficiently, and stay productive through a clean and responsive user interface.
 
 ---
 
-## 📱 Features
+## ✨ Features
+
+### 🔐 Authentication
+
+* User Registration
+* Secure Login with Email & Password
+* Auto Login (Persistent Sessions)
+* Logout Functionality
+* Firebase Authentication Integration
 
 ### ✅ Task Management
-- Add new tasks
-- Edit existing tasks
-- Delete tasks
-- Mark tasks as completed/incomplete
 
-### 📂 Task Categories
-- Study
-- Work
-- Personal
+* Add Tasks
+* Edit Tasks
+* Delete Tasks
+* Mark Tasks as Completed / Incomplete
+
+### 📂 Categories
+
+* Study
+* Work
+* Personal
 
 ### 📅 Due Dates
-- Select due dates using Flutter Date Picker
-- Display task deadlines
 
-### 🔍 Search Tasks
-- Real-time task searching
-- Quickly find tasks by title
+* Select Due Dates using Flutter Date Picker
+* Display Task Deadlines
 
-### 📊 Task Statistics
-- Total tasks count
-- Completed tasks count
-- Remaining tasks count
+### 🔍 Search
+
+* Real-time Task Search
+* Instantly Filter Tasks by Title
+
+### 📊 Dashboard
+
+* Total Tasks Count
+* Completed Tasks Count
+* Remaining Tasks Count
 
 ### 🌙 Dark Mode
-- Light/Dark theme toggle
-- Theme preference saved locally
+
+* Light / Dark Theme Toggle
+* Theme Preference Saved Locally
 
 ### 💾 Local Storage
-- Tasks saved using SharedPreferences
-- Data persists after app restart
 
-### 👋 Dynamic Greeting
-- Good Morning
-- Good Afternoon
-- Good Evening
-- Good Night
+* Tasks Persisted using SharedPreferences
+* Data Remains Available After App Restart
 
----
+### 👋 Dynamic Greetings
 
-## 🛠️ Technologies Used
-
-- Flutter
-- Dart
-- Shared Preferences
-- Google Fonts
-- Material Design 3
-- Intl Package
+* Good Morning
+* Good Afternoon
+* Good Evening
+* Good Night
 
 ---
 
-## 📦 Dependencies
+## 🛠️ Tech Stack
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
+### Frontend
 
-  shared_preferences: ^latest
-  google_fonts: ^latest
-  intl: ^latest
-```
+* Flutter
+* Dart
+
+### Backend & Authentication
+
+* Firebase Authentication
+* Firebase Core
+
+### Local Storage
+
+* SharedPreferences
+
+### UI & Utilities
+
+* Material Design 3
+* Google Fonts
+* Intl Package
 
 ---
 
-## 📁 Project Structure
+## 📱 Screens
+
+* Login Screen
+* Registration Screen
+* Home Dashboard
+* Add Task Dialog
+* Edit Task Dialog
+
+---
+
+## 📂 Project Structure
 
 ```text
 lib/
 │
 ├── main.dart
+├── auth_wrapper.dart
+│
 ├── models/
 │   └── task.dart
 │
-└── assets/
+├── services/
+│   └── auth_service.dart
+│
+├── screens/
+│   ├── login_screen.dart
+│   └── register_screen.dart
 ```
 
 ---
 
-## 🧠 App Workflow
+## 🔄 Application Flow
 
 ```text
-User
-  ↓
-Add/Edit/Delete Task
-  ↓
-Task List Updated
-  ↓
-Save Data Locally
-  ↓
-Shared Preferences
-  ↓
-Load Data on App Restart
+App Launch
+    ↓
+AuthWrapper
+    ↓
+User Logged In?
+    ↓
+ ┌───────────┬───────────┐
+ │    Yes    │    No     │
+ ▼           ▼
+Home      Login
+Screen    Screen
 ```
 
 ---
 
-## 🎨 UI Highlights
-
-- Material 3 Design
-- Responsive Layout
-- Gradient Statistics Card
-- Modern Task Cards
-- Smooth User Experience
-- Poppins Font Styling
-
----
-
-## 📊 Data Model
+## 📊 Task Model
 
 ```dart
 Task(
@@ -127,33 +148,33 @@ Task(
 
 ---
 
-## 🔮 Future Improvements
+## 🚀 Future Improvements
 
-- Firebase Authentication
-- Cloud Sync
-- Push Notifications
-- Task Priority Levels
-- Task Reminders
-- Calendar View
-- Categories Management
-- Task Sorting & Filtering
+* Cloud Task Sync with Firestore
+* Google Sign-In
+* Email Verification
+* Forgot Password
+* Push Notifications
+* Task Reminders
+* Task Priority Levels
+* Calendar View
+* Task Filtering & Sorting
+* User Profiles
 
 ---
 
 ## 👨‍💻 Developer
 
-Developed using Flutter & Dart.
+**Rasool Bux**
 
-**Project Name:** TaskFlow  
-**Type:** Todo / Task Management App  
-**Developer:** Rasool Bux
+Flutter Developer | Learning Mobile App Development
 
 ---
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
 
 ---
 
-⭐ If you like this project, don't forget to star the repository!
+⭐ If you found this project useful, consider giving it a star.
