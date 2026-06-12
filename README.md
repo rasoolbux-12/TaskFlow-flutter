@@ -167,7 +167,7 @@ Task(
 
 **Rasool Bux**
 
-Flutter Developer | Learning Mobile App Development
+Flutter and Kotlin Developer
 
 ---
 
